@@ -1,0 +1,163 @@
+@import "colors/current_theme.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #d4d4d4;
+}
+
+#workspaces {
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  border-radius: 12px;
+  padding: 0 4px;
+  margin: 6px 4px 0 16px;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #d4d4d4;
+  padding: 0 10px;
+  margin: 2px 0;
+  min-width: 24px;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  border-right: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+#workspaces button:last-child {
+  border-right: none;
+}
+
+#workspaces button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+#workspaces button:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+#workspaces button:hover {
+  background: alpha(@accent, 0.4);
+}
+
+/* It has to be active and not focused on hyprland */
+#workspaces button.focused {
+  background: alpha(@accent, 0.6);
+  border: 1px solid alpha(@accent, 0.5);
+}
+
+#workspaces button.urgent {
+  background: alpha(@danger, 0.5);
+  border: 1px solid alpha(@danger, 0.4);
+}
+
+#custom-hyprpicker {
+  font-size: 18px;
+  color: #d4d4d4;
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  border-radius: 12px;
+  padding: 0 12px;
+  margin: 6px 16px 0 4px;
+}
+
+#custom-hyprpicker:hover {
+  background: alpha(@accent, 0.4);
+}
+
+#custom-arrow-workspaces,
+#custom-arrow-clock-left,
+#custom-arrow-clock-right,
+#custom-arrow-tray,
+#custom-arrow-audio {
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#clock {
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  color: #d4d4d4;
+  padding: 0 16px;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+#tray {
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  border-radius: 12px;
+  padding: 0 12px;
+  margin: 6px 4px 0 4px;
+  color: #d4d4d4;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: alpha(@danger, 0.5);
+  border-radius: 8px;
+}
+
+#pulseaudio {
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  color: #d4d4d4;
+  padding: 0 14px;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+#pulseaudio:hover {
+  background: alpha(@accent, 0.4);
+  border-color: @accent;
+}
+
+#pulseaudio.muted {
+  color: @muted;
+}
+
+#battery {
+  background: alpha(@base, 0.7);
+  border: 2px solid rgba(120, 120, 120, 0.25);
+  color: #d4d4d4;
+  padding: 0 14px;
+  margin: 6px 4px 0 4px;
+  border-radius: 12px;
+}
+
+#battery.charging {
+  border-color: @info;
+  color: @info;
+}
+
+#battery.warning:not(.charging) {
+  border-color: @warning;
+}
+
+#battery.critical:not(.charging) {
+  background: alpha(@danger, 0.3);
+  border-color: @danger;
+  color: @danger;
+}

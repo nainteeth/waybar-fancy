@@ -1,0 +1,146 @@
+{
+  "reload_style_on_change": true,
+  "height": 30,
+  "spacing": 0,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "battery",
+    "tray",
+    "pulseaudio",
+    "custom/hyprpicker"
+  ],
+  "custom/hyprpicker": {
+    "format": "󰈊",
+    "on-click": "~/nix/home/dotfiles/waybar/scripts/hyprpicker-with-notifi.sh",
+    "tooltip": false
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{name} {windows}",
+    "format-window-separator": " ",
+    "window-rewrite-default": "󰏗",
+    "window-rewrite": {
+      "class<firefox>": "󰈹",
+      "class<zen-beta>": "󰈹",
+      "class<zen>": "󰈹",
+      "class<chromium>": "󰊯",
+      "class<google-chrome>": "󰊯",
+      "class<brave-browser>": "󰖟",
+      "class<kitty>": "",
+      "class<Alacritty>": "",
+      "class<foot>": "",
+      "class<code>": "󰨞",
+      "class<Code>": "󰨞",
+      "class<codium>": "󰨞",
+      "class<com.discordapp.Discord>": "󰙯",
+      "class<vesktop>": "󰙯",
+      "class<discord>": "󰙯",
+      "class<Spotify>": "󰓇",
+      "class<spotify>": "󰓇",
+      "class<Steam>": "󰓓",
+      "class<steam>": "󰓓",
+      "class<thunar>": "󰉋",
+      "class<nautilus>": "󰉋",
+      "class<dolphin>": "󰉋",
+      "class<obsidian>": "󰎚",
+      "class<Slack>": "󰒱",
+      "class<signal>": "󰭹",
+      "class<telegram>": "󰔁",
+      "class<mpv>": "󰕼",
+      "class<vlc>": "󰕼",
+      "class<gimp>": "󰃣",
+      "class<blender>": "󰂫",
+      "class<obs>": "󰑋",
+      "class<.*osu.*>": "󰺢",
+      "class<org.keepassxc.KeePassXC>": "󰌋"
+    },
+    "persistent-workspaces": {
+      "DP-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "DP-2": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "eDP-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "tray": {
+    "spacing": 8
+  },
+  "clock": {
+    "format": "{:%A, %d %B | %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "xdg-open https://calendar.google.com && sleep 0.3 && hyprctl dispatch focuswindow class:zen-beta"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-plugged": "{capacity}% \uf0e7",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "\uf6a9 muted",
+    "format-icons": {
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "on-click": "pavucontrol"
+  }
+}
